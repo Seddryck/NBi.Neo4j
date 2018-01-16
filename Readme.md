@@ -22,8 +22,8 @@ NBi and this extension are available on the terms of Apache 2.0. NBi is also usi
 The list of bugs and feature's requests for NBi.Neo4j is hosted on [GitHub](https://github.com/Seddryck/NBi.Neo4j/issues)
 
 ## Continuous Integration ##
-A continuous integration service is available on AppVeyor at [https://ci.appveyor.com/project/Seddryck/nbi.Neo4j]
-Note that the tests are not executed on this environment due to issues during the installation of neo4j.
+A continuous integration service is available on [AppVeyor](https://ci.appveyor.com/project/Seddryck/nbi.neo4j)
+Note that only unit tests are executed on this environment due to issues during the installation of Neo4j (see [neo4j #6165](https://github.com/neo4j/neo4j/issues/6165)).
 
 Artefact provided by this CI:
 
