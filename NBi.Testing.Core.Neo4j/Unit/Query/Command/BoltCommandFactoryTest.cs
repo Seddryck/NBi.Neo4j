@@ -12,7 +12,7 @@ using NUnit.Framework;
 using Moq;
 using NBi.Core.Neo4j.Query.Command;
 
-namespace NBi.Testing.Core.Neo4j.Query.Command
+namespace NBi.Testing.Core.Neo4j.Unit.Query.Command
 {
     public class BoltCommandFactoryTest
     {

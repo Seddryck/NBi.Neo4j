@@ -21,6 +21,7 @@ after_build:
     .\.packages\package-NBi-Neo4j.ps1 $nuget_version
 test_script:
 - cmd: nunit-console-x86 /fixture:NBi.Testing.Core.Neo4j.Unit NBi.Testing.Core.Neo4j\bin\debug\NBi.Testing.Core.Neo4j.dll
+# Use of /fixture and not /run to avoid the Setup
 artifacts:
 - path: NBi.Core.Neo4j\bin\Debug
   name: NBi.Neo4j

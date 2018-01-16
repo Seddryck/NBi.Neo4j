@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NBi.Testing.Core.Neo4j.Query.Command
+namespace NBi.Testing.Core.Neo4j.Unit.Query.Command
 {
    
     public class BoltCommandTest
