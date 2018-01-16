@@ -1,9 +1,9 @@
 ![Logo](https://github.com/Seddryck/nbi/raw/gh-pages/img/logo-2x.png)
 # NBi.Neo4j #
-NBi.Neo4j is an extension to the [NBi testing framework](http://www.nbi.io) (add-on to NUnit) for **Business Intelligence** and **Data centric** applications. This extension lets you run tests defined within NBi on an Azure Neo4j database. At the moment only the graph/gremlin API is supported.
+NBi.Neo4j is an extension to the [NBi testing framework](http://www.nbi.io) (add-on to NUnit) for **Business Intelligence** and **Data centric** applications. This extension lets you run tests defined within NBi on a Neo4j database with the help of the bolt driver and cypher queries.
 
 [![Build status](https://img.shields.io/badge/website-nbi.io-fe762d.svg)](http://www.nbi.io)
-[![Build status](https://ci.appveyor.com/api/projects/status/gb0wkvo115sfw2br?svg=true)](https://ci.appveyor.com/project/Seddryck/nbi-Neo4j)
+[![Build status](https://ci.appveyor.com/api/projects/status/5iog9f52ecwjkre6?svg=true)](https://ci.appveyor.com/project/Seddryck/nbi-Neo4j)
 ![Still maintained](https://img.shields.io/maintenance/yes/2018.svg)
 [![nuget](https://img.shields.io/nuget/v/NBi.Neo4j.svg)](https://www.nuget.org/packages?q=nbi)
 [![licence badge](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://github.com/Seddryck/NBi.Neo4j/blob/master/LICENSE)
@@ -23,11 +23,12 @@ The list of bugs and feature's requests for NBi.Neo4j is hosted on [GitHub](http
 
 ## Continuous Integration ##
 A continuous integration service is available on AppVeyor at [https://ci.appveyor.com/project/Seddryck/nbi.Neo4j]
-Note that all the tests are not executed on this environment due to limitations in the availability of some components.
+Note that the tests are not executed on this environment due to issues during the installation of neo4j.
 
 Artefact provided by this CI:
 
 - NBi.Neo4j.zip contains the dll needed to extend NBi and run the tests on a Neo4j platform.
+- NBi.Neo4j.nupkg contains the nuhet package of this library
 
 ## Code ##
 NBi is using **Git** as DCVS and the code is hosted on [Github](https://github.com/Seddryck/NBi.Neo4j). 

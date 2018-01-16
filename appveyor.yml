@@ -19,8 +19,8 @@ after_build:
     $nuget_version = "$env:GitVersion_NuGetVersionV2"
 
     .\.packages\package-NBi-Neo4j.ps1 $nuget_version
-#test_script:
-#- cmd: nunit-console-x86 NBi.Testing.Core.Neo4j\bin\debug\NBi.Testing.Core.Neo4j.dll
+test_script:
+- cmd: nunit-console-x86 /fixture:NBi.Testing.Core.Neo4j.Unit NBi.Testing.Core.Neo4j\bin\debug\NBi.Testing.Core.Neo4j.dll
 artifacts:
 - path: NBi.Core.Neo4j\bin\Debug
   name: NBi.Neo4j
