@@ -170,29 +170,28 @@
       <HintPath>..\packages\Moq.4.7.145\lib\net45\Moq.dll</HintPath>
     </Reference>
     <Reference Include="NBi.Core, Version=1.18.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NBi.Framework.1.18.0-rc0001\lib\461\NBi.Core.dll</HintPath>
+      <HintPath>..\packages\NBi.Framework.1.18.0-beta0084\lib\461\NBi.Core.dll</HintPath>
     </Reference>
     <Reference Include="NBi.Core.SqlServer2014, Version=1.18.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NBi.Framework.1.18.0-rc0001\lib\461\NBi.Core.SqlServer2014.dll</HintPath>
+      <HintPath>..\packages\NBi.Framework.1.18.0-beta0084\lib\461\NBi.Core.SqlServer2014.dll</HintPath>
     </Reference>
     <Reference Include="NBi.Core.SqlServer2016, Version=1.18.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NBi.Framework.1.18.0-rc0001\lib\461\NBi.Core.SqlServer2016.dll</HintPath>
+      <HintPath>..\packages\NBi.Framework.1.18.0-beta0084\lib\461\NBi.Core.SqlServer2016.dll</HintPath>
     </Reference>
     <Reference Include="NBi.Framework, Version=1.18.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NBi.Framework.1.18.0-rc0001\lib\461\NBi.Framework.dll</HintPath>
+      <HintPath>..\packages\NBi.Framework.1.18.0-beta0084\lib\461\NBi.Framework.dll</HintPath>
     </Reference>
     <Reference Include="NBi.NUnit, Version=1.18.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NBi.Framework.1.18.0-rc0001\lib\461\NBi.NUnit.dll</HintPath>
+      <HintPath>..\packages\NBi.Framework.1.18.0-beta0084\lib\461\NBi.NUnit.dll</HintPath>
     </Reference>
     <Reference Include="NBi.NUnit.Runtime, Version=1.18.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NBi.Framework.1.18.0-rc0001\lib\461\NBi.NUnit.Runtime.dll</HintPath>
+      <HintPath>..\packages\NBi.Framework.1.18.0-beta0084\lib\461\NBi.NUnit.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="NBi.Testing, Version=1.17.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\NBi\master\NBi.Testing\bin\Debug\NBi.Testing.dll</HintPath>
+    <Reference Include="NBi.Testing, Version=1.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NBi.Framework.1.18.0-beta0084\lib\461\NBi.Testing.dll</HintPath>
     </Reference>
     <Reference Include="NBi.Xml, Version=1.18.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NBi.Framework.1.18.0-rc0001\lib\461\NBi.Xml.dll</HintPath>
+      <HintPath>..\packages\NBi.Framework.1.18.0-beta0084\lib\461\NBi.Xml.dll</HintPath>
     </Reference>
     <Reference Include="NCalc, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NCalc-Edge.1.4.3\lib\NCalc.dll</HintPath>

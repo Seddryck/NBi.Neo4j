@@ -1,10 +1,12 @@
 version: build.{build}
 image: Visual Studio 2017
-environment:
-  AzureGraphConnectionString:
-    secure: H+W/cycdn/PV3Rs+Z+gD6TkPEVgaqZOgyJ6bsNOzypHYWh2GR04/FBA5A/F+dRxsi4u2Pp9lAj+KfjvlCJM4UW2OKjHU+bmcuKtroQ3sKOEUbh8ZxhTU6qH9NPR/bLPp3QGI+W9ncuOm4cibZmmvlXLMxxDrUkMBW2sM6ShO0Gqi71sPujONLxJW1Qy2OReRLycT1LBRkj3TcozCdD+OLzw0450hlRIVsC5k118YWPzppr89lCNV/VFc1abZ72ku
 init:
 - cmd: git config --global core.autocrlf true
+#install:
+#- ps: Start-FileDownload 'http://neo4j.com/artifact.php?name=neo4j-community-3.3.0-windows.zip' -FileName 'c:\projects\neo4j-community-3.3.0-windows.zip'
+#- cmd: 7z x c:\projects\neo4j-community-3.3.0-windows.zip -oc:\projects\neo4j
+#- ps: .\setup-neo4j.ps1
+#- cmd: netstat -ab
 before_build:
 - cmd: >-
     gitversion /l console /output buildserver /updateAssemblyInfo
@@ -17,10 +19,8 @@ after_build:
     $nuget_version = "$env:GitVersion_NuGetVersionV2"
 
     .\.packages\package-NBi-Neo4j.ps1 $nuget_version
-
-    .\testing-override-connectionString.ps1 $env:AzureGraphConnectionString
-test_script:
-- cmd: nunit-console-x86 NBi.Testing.Core.Neo4j\bin\debug\NBi.Testing.Core.Neo4j.dll
+#test_script:
+#- cmd: nunit-console-x86 NBi.Testing.Core.Neo4j\bin\debug\NBi.Testing.Core.Neo4j.dll
 artifacts:
 - path: NBi.Core.Neo4j\bin\Debug
   name: NBi.Neo4j
