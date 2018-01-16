@@ -9,7 +9,8 @@ Write-Host "Calculating dependencies ..."
 
 $dependencies = @{}
 $solutionRoot = Join-Path ($root) ".."
-$projects = Get-ChildItem $solutionRoot | ?{ $_.PSIsContainer -and $_.Name -like "NBi.*" -and $_.Name -notLike "*.UI*" -and $_.Name -notLike "*genbi*" -and $_.Name -notLike "*Testing*" -and $_.Name -notLike "*Service*"} | select Name, FullName
+Write-Host "Looking for projects in $solutionRoot ..."
+$projects = Get-ChildItem $solutionRoot | ?{ $_.PSIsContainer -and $_.Name -like "*Neo4j*"-and $_.Name -notLike "*Testing*"} | select Name, FullName
 foreach($proj in $projects)
 {
     $projName = $proj.name
@@ -41,10 +42,10 @@ Copy-Item $root\..\NBi.Core.Neo4j\bin\Debug\NBi.*Neo4j*.dll $lib
 
 Write-Host "Setting .nuspec version tag to $version"
 
-$content = (Get-Content $root\NBi.Neo4j.nuspec -Encoding UTF8) 
+$content = (Get-Content $root\NBi.Neo4j\NBi.Neo4j.nuspec -Encoding UTF8) 
 $content = $content -replace '\$version\$',$version
 $content = $content -replace '\$depList\$',$depList
 
-$content | Out-File $root\NBi.Neo4j.compiled.nuspec -Encoding UTF8
+$content | Out-File $root\NBi.Neo4j\NBi.Neo4j.compiled.nuspec -Encoding UTF8
 
-& $root\..\.nuget\NuGet.exe pack $root\..\.packages\NBi.Neo4j.compiled.nuspec -Version $version -OutputDirectory $root\..\.nupkg
+& NuGet.exe pack $root\..\.packages\NBi.Neo4j\NBi.Neo4j.compiled.nuspec -Version $version -OutputDirectory $root\..\.nupkg
