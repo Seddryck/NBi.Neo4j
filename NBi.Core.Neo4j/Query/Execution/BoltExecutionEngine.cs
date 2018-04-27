@@ -1,11 +1,9 @@
-﻿using NBi.Core.Neo4j.Query.Client;
-using NBi.Core.Query;
-using NBi.Core.Query.Execution;
+﻿using NBi.Extensibility;
+using NBi.Extensibility.Query;
 using Neo4j.Driver.V1;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;

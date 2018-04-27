@@ -1,4 +1,4 @@
-﻿using NBi.Core.Query.Command;
+﻿using NBi.Extensibility.Query;
 using Neo4j.Driver.V1;
 using System;
 using System.Collections.Generic;

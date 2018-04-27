@@ -15,6 +15,7 @@ using NBi.Core.Neo4j.Query.Command;
 using System.Reflection;
 using System.IO;
 using Neo4j.Driver.V1;
+using NBi.Extensibility.Query;
 
 namespace NBi.Testing.Core.Neo4j.Integration.Query.Command
 {

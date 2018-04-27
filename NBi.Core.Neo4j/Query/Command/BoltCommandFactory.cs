@@ -1,7 +1,5 @@
 ﻿using NBi.Core.Neo4j.Query.Client;
-using NBi.Core.Query;
-using NBi.Core.Query.Command;
-using NBiSession = NBi.Core.Query.Client;
+using NBi.Extensibility.Query;
 using Neo4j.Driver.V1;
 using System;
 using System.Collections.Generic;
@@ -9,22 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using NBi.Extensibility;
 
 namespace NBi.Core.Neo4j.Query.Command
 {
     class BoltCommandFactory : ICommandFactory
     {
-        public bool CanHandle(NBiSession.IClient client) => client is BoltClient;
+        public bool CanHandle(IClient client) => client is BoltClient;
 
-        public ICommand Instantiate(NBiSession.IClient client, IQuery query)
+        public ICommand Instantiate(IClient client, IQuery query)
+            => Instantiate(client, query, null);
+
+        public ICommand Instantiate(IClient client, IQuery query, ITemplateEngine engine)
         {
             if (!CanHandle(client))
                 throw new ArgumentException();
-            var statement = Instantiate(query);
+            var statement = Instantiate(query, engine);
             return new BoltCommand(client.CreateNew() as ISession, statement);
         }
 
-        protected Statement Instantiate(IQuery query)
+        protected Statement Instantiate(IQuery query, ITemplateEngine engine)
         {
             var parameters = new Dictionary<string, object>();
             foreach (var paramater in query.Parameters)
@@ -38,7 +40,7 @@ namespace NBi.Core.Neo4j.Query.Command
             var statementText = query.Statement;
 
             if (query.TemplateTokens != null && query.TemplateTokens.Count() > 0)
-                statementText = ApplyVariablesToTemplate(query.Statement, query.TemplateTokens);
+                statementText = ApplyVariablesToTemplate(engine, query.Statement, query.TemplateTokens);
 
             return new Statement(statementText, parameters);
         }
@@ -55,10 +57,12 @@ namespace NBi.Core.Neo4j.Query.Command
             }
         }
 
-        private string ApplyVariablesToTemplate(string template, IEnumerable<IQueryTemplateVariable> variables)
+        private string ApplyVariablesToTemplate(ITemplateEngine engine, string template, IEnumerable<IQueryTemplateVariable> variables)
         {
-            var templateEngine = new StringTemplateEngine(template, variables);
-            return templateEngine.Build();
+            var valuePairs = new List<KeyValuePair<string, object>>();
+            foreach (var variable in variables)
+                valuePairs.Add(new KeyValuePair<string, object>(variable.Name, variable.Value));
+            return engine.Render(template, valuePairs);
         }
 
         protected virtual string RenameParameter(string originalName)

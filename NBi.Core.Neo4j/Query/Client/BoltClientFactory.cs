@@ -1,5 +1,4 @@
-﻿using NBi.Core.Query.Client;
-using Neo4j.Driver.V1;
+﻿using NBi.Extensibility.Query;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +14,7 @@ namespace NBi.Core.Neo4j.Query.Client
             return connectionString.ToLowerInvariant().StartsWith("bolt://");
         }
 
-        public NBi.Core.Query.Client.IClient Instantiate(string connectionString)
+        public IClient Instantiate(string connectionString)
         {
             var tokens = connectionString.Split(new[] { ':', '/', '@' }, StringSplitOptions.RemoveEmptyEntries);
             if (tokens.Count()!=5 || tokens[0].ToLowerInvariant() != "bolt")

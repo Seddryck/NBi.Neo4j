@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using Moq;
 using NBi.Core.Neo4j.Query.Command;
+using NBi.Extensibility.Query;
 
 namespace NBi.Testing.Core.Neo4j.Unit.Query.Command
 {
@@ -28,7 +29,7 @@ namespace NBi.Testing.Core.Neo4j.Unit.Query.Command
         [Test]
         public void CanHandle_OtherKindOfSession_False()
         {
-            var session = Mock.Of<NBiSession.IClient>();
+            var session = Mock.Of<IClient>();
             var query = Mock.Of<IQuery>();
             var factory = new BoltCommandFactory();
             Assert.That(factory.CanHandle(session), Is.False);

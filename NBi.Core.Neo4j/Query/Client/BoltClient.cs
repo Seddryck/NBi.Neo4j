@@ -1,4 +1,5 @@
-﻿using Neo4j.Driver.V1;
+﻿using NBi.Extensibility.Query;
+using Neo4j.Driver.V1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NBi.Core.Neo4j.Query.Client
 {
-    class BoltClient : NBi.Core.Query.Client.IClient
+    class BoltClient : IClient
     {
         private readonly string connectionString;
         private readonly IDriver driver;

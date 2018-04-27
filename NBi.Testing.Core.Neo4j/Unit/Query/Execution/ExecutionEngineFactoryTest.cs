@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NBi.Extensibility.Query;
 
 namespace NBi.Testing.Core.Neo4j.Unit.Query.Execution
 {
