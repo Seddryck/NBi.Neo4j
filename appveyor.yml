@@ -44,3 +44,12 @@ deploy:
     secure: +E89GuWTCkM1DpiRGoO3oRLIvLIjb8aPsHqNvga0ID/xdUx0cvDjI7XVdF12rmEm
   on:
     branch: develop
+- description: ''
+  provider: GitHub
+  auth_token:
+    secure: Gr2fraoXD6EyzbJJTfK+lk65/SO5SUaeQNzN51G2BB+wiS95xBeiFcl/8k5LP1h8
+  artifact: NBi.Neo4j
+  draft: true
+  prerelease: false
+  on:
+    APPVEYOR_REPO_TAG: true
